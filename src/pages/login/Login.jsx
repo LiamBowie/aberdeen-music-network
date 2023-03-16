@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import "./login.css";
 
-function LoginForm() {
+function Login() {
 
 
     return (
@@ -14,7 +15,9 @@ function LoginForm() {
                     <label htmlFor="password">Password</label>
                     <input type="password" name='password' placeholder='Type your password' />
                     <div className='submitButtons'>
-                        <button>Login</button>
+                        <Link to="/">
+                            <button>Login</button>
+                        </Link>
                         <button>Register</button>
                     </div>
                 </form>
@@ -29,4 +32,4 @@ function LoginForm() {
     );
 }
 
-export default LoginForm;
+export default Login;
