@@ -10,7 +10,7 @@ function Login() {
     const login = async (event) => {
         event.preventDefault();
         const data = { username, password }
-        const response = await fetch('http://localhost:4001/login', {
+        const response = await fetch('http://localhost:4001/api/user/login', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -24,7 +24,7 @@ function Login() {
     const register = async (event) => {
         event.preventDefault();
         const data = { username, password }
-        const response = await fetch('http://localhost:4001/register', {
+        const response = await fetch('http://localhost:4001/api/user/register', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -38,7 +38,7 @@ function Login() {
     const getUser = async (event) => {
         event.preventDefault();
         console.log('Awaiting promise');
-        const response = await fetch('http://localhost:4001/user', {
+        const response = await fetch('http://localhost:4001/api/user', {
             method: 'GET',
             headers: {
                 'content-type': 'application/json'
