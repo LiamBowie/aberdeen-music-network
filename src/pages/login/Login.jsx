@@ -5,6 +5,7 @@ import "./login.css";
 function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [data, setData] = useState(null);
 
     const login = async (event) => {
         event.preventDefault();
@@ -44,8 +45,9 @@ function Login() {
             },
             credentials: 'include'
         });
-        const data = await response.json();
-        console.log(data);
+        const json = await response.json();
+        setData(json);
+        console.log(json);
     }
 
     return (
@@ -62,6 +64,9 @@ function Login() {
                         <button onClick={register}>Register</button>
                         <button onClick={getUser}>Log user</button>
                     </div>
+                    {
+                        data ? <p>Hello, {data.username}</p> : null
+                    }
                 </form>
                 <span>Or sign up using</span>
                 <div className='thirdPartyButtons'> 
